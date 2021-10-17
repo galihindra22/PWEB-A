@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.ancestors * { 
+  display: block;
+  border: 2px solid grey;
+  color: lightgrey;
+  padding: 5px;
+  margin: 15px;
+  border-radius: 50%;
+ 
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("span").parent().css({"color": "red", "border": "2px solid red"});
+});
+</script>
+</head>
+<body>
+
+<div class="ancestors">
+  <div style = "width:250px">
+    <ul>
+      <li>
+        <span>target</span>
+      </li>
+    </ul>   
+  </div>
+
+  
+</body>
+</html>
