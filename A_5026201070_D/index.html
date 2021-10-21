@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,300;1,400;1,600&display=swap"
+		rel="stylesheet">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+	<title>Form validation</title>
+</head>
+
+
+<body>
+
+	<section class="bg">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="col-md-4">
+					<div class="form-wrap">
+						<div class="form-heading">
+							<p>Form Input Vaksinasi Peserta</p><br>
+							
+							
+
+						</div>
+						<form name="regForm" id="regForm">
+							<div class="form-group">
+								<label>Name: </label>
+								<input type="text" class="form-control" id="name" name="" >
+								<p id="p1"></p>
+							</div>
+							<div class="form-group">
+								<label>NIK: </label>
+								<input type="text" class="form-control" id="address" name="">
+								<p id="p2"></p>
+							</div>
+							
+							<div class="form-group">
+								<label for="course">Jenis Vaksin:</label>
+								<br>
+								<select id="course" name="course">
+									<option value="btech"></option>
+									<option value="bba">AZ</option>
+									<option value="bca">Moderna</option>
+									<option value="b.com">Sinovac</option>
+									
+								</select>
+							</div>
+							<div class="form-group">
+								<label>No Batch: </label>
+								<input type="text" class="form-control" id="zipc" name="">
+								<p id="p6"></p>
+							</div>
+							<div class ="col-6">
+								<div class="form-group">
+
+									<input type="submit" class="btn btn-primary btn-block" id="submit">
+
+								</div>
+
+							</div>
+							<div class="col-6">
+								<div class="form-group">
+
+									<input type="reset" class="btn btn-primary btn-success" id="reset">
+	
+								</div>
+							</div>
+						</form>
+						Galihindra Nevano Nurvadika<br>
+						Galih<br>
+						5026201070
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			$("#submit").click(function () {
+				var name = $("#name").val();
+				var address = $("#address").val();
+				var zipc =  $("#zipc").val();
+				var what = document.forms["regForm"]["course"];
+
+				if (name.length == "" ) {
+					$("#p1").text("Tolong isi nama");
+					$("#name").focus();
+					return false;
+				}
+				
+				
+				else if (address.length == "") {
+					$("#p2").text("Tolong isi NIK");
+					$("#password").focus();
+					return false;
+				}
+				
+				else if (what.selectedIndex < 1) {
+                    alert("Pilih vaksin.");
+                    what.focus();
+                    return false;
+                }
+				else if (zipc.length == "") {
+					$("#p6").text("Tolong isi No Batch");
+					$("#zipc").focus();
+					return false;
+				}
+				
+
+
+
+
+				else {
+					var con = confirm("Apakah Selesai");
+					if (con == true) {
+						alert("Form Didaftarkan");
+						return true;
+					}
+					else {
+						return false;
+					}
+				}
+			});
+		});
+		$(document).ready(function () {
+			$("#client")[0].reset();
+		});
+	</script>
+
+
+
+</body>
+
+</html>
